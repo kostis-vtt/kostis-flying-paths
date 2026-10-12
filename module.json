@@ -1,0 +1,49 @@
+{
+  "id": "kostis-flying-paths",
+  "title": "Kostis's Flying Paths",
+  "description": "The hub of the Kostis's Flying Paths family: Kostis's Actual Animator, Kostis's Particle Effects and Kostis's Auto-Patrol System. Provides the shared launcher, scene controls, GM relay, asset storage and procedural maths the family is built on.",
+  "version": "1.3.0",
+  "authors": [
+    {
+      "name": "Kostis",
+      "url": "https://github.com/kostis-vtt"
+    }
+  ],
+  "url": "https://github.com/kostis-vtt/kostis-flying-paths",
+  "manifest": "https://github.com/kostis-vtt/kostis-flying-paths/releases/latest/download/module.json",
+  "download": "https://github.com/kostis-vtt/kostis-flying-paths/releases/download/v1.3.0/module.zip",
+  "bugs": "https://github.com/kostis-vtt/kostis-flying-paths/issues",
+  "readme": "https://github.com/kostis-vtt/kostis-flying-paths/blob/main/README.md",
+  "changelog": "https://github.com/kostis-vtt/kostis-flying-paths/blob/main/CHANGELOG.md",
+  "license": "MIT",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "esmodules": [
+    "scripts/hub.js"
+  ],
+  "styles": [
+    "styles/hub.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "relationships": {
+    "recommends": [
+      {
+        "id": "kostis-actual-animator",
+        "type": "module",
+        "reason": "Draws the motion paths that the other modules fly along.",
+        "compatibility": {
+          "minimum": "1.3.0"
+        },
+        "manifest": "https://github.com/kostis-vtt/kostis-actual-animator/releases/latest/download/module.json"
+      }
+    ]
+  }
+}

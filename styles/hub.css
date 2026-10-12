@@ -1,0 +1,153 @@
+/* =========================================================================
+   Kostis's Flying Paths — shared look for every module of the family.
+   Apps add the class "kfp-app" and use the kfp-* components below.
+   ========================================================================= */
+
+.kfp-app {
+  --kfp-accent: #ff7a3d;
+  --kfp-accent-2: #ffb347;
+  --kfp-magic: #b46cff;
+  --kfp-go: #3ddc84;
+  --kfp-danger: #ff5d6c;
+  --kfp-bg: rgba(10, 12, 16, 0.55);
+  --kfp-bg-2: rgba(255, 255, 255, 0.04);
+  --kfp-bg-3: rgba(255, 255, 255, 0.08);
+  --kfp-line: rgba(255, 255, 255, 0.10);
+  --kfp-line-2: rgba(255, 255, 255, 0.18);
+  --kfp-text: var(--color-text-primary, #e8e6e3);
+  --kfp-muted: color-mix(in srgb, var(--kfp-text) 55%, transparent);
+  --kfp-radius: 8px;
+  font-size: var(--font-size-13, 13px);
+}
+
+.kfp-app [hidden] { display: none !important; }
+.kfp-app .kfp-muted { color: var(--kfp-muted); }
+.kfp-app button { cursor: pointer; }
+
+/* ---------- Buttons ---------- */
+
+.kfp-app .kfp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: auto;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--kfp-line-2);
+  border-radius: 6px;
+  background: var(--kfp-bg-3);
+  color: var(--kfp-text);
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background 120ms, border-color 120ms, transform 80ms;
+}
+.kfp-app .kfp-btn:hover:not(:disabled) { background: rgba(255, 255, 255, 0.14); border-color: rgba(255, 255, 255, 0.3); }
+.kfp-app .kfp-btn:active:not(:disabled) { transform: translateY(1px); }
+.kfp-app .kfp-btn:disabled { opacity: 0.4; cursor: default; }
+.kfp-app .kfp-btn.active { border-color: var(--kfp-accent); box-shadow: inset 0 0 0 1px var(--kfp-accent); }
+.kfp-app .kfp-btn.kfp-small { height: 24px; padding: 0 8px; font-size: 11px; }
+.kfp-app .kfp-btn.kfp-big { height: 40px; padding: 0 18px; font-size: 14px; }
+.kfp-app .kfp-btn.kfp-primary {
+  background: linear-gradient(180deg, var(--kfp-accent-2), var(--kfp-accent));
+  border-color: transparent;
+  color: #1b0f06;
+  font-weight: 700;
+}
+.kfp-app .kfp-btn.kfp-primary:hover:not(:disabled) { filter: brightness(1.08); }
+.kfp-app .kfp-btn.kfp-danger { color: var(--kfp-danger); }
+
+.kfp-app .kfp-icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--kfp-muted);
+}
+.kfp-app .kfp-icon-btn:hover:not(:disabled) { color: var(--kfp-text); background: var(--kfp-bg-3); }
+.kfp-app .kfp-icon-btn.kfp-danger:hover { color: var(--kfp-danger); }
+
+/* ---------- Fields ---------- */
+
+.kfp-app .kfp-field { display: grid; grid-template-columns: 120px minmax(0, 1fr); align-items: center; gap: 8px; margin: 6px 0; }
+.kfp-app .kfp-field > label { color: var(--kfp-muted); font-size: 12px; }
+.kfp-app .kfp-field input[type="range"] { width: 100%; }
+.kfp-app .kfp-field .kfp-range { display: grid; grid-template-columns: minmax(0, 1fr) 52px; gap: 8px; align-items: center; }
+.kfp-app .kfp-field .kfp-range output { text-align: right; font-variant-numeric: tabular-nums; color: var(--kfp-muted); font-size: 12px; }
+.kfp-app .kfp-hint { color: var(--kfp-muted); font-size: 11px; margin: 2px 0 8px; }
+.kfp-app .kfp-subhead {
+  margin: 14px 0 6px;
+  padding: 0 0 4px;
+  border-bottom: 1px solid var(--kfp-line);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kfp-muted);
+}
+
+/* ---------- Tabs & pills ---------- */
+
+.kfp-app .kfp-tabs { display: flex; gap: 4px; padding: 8px 10px 0; border-bottom: 1px solid var(--kfp-line); }
+.kfp-app .kfp-tabs button {
+  display: inline-flex; align-items: center; gap: 6px; width: auto; height: 30px; padding: 0 12px;
+  border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: none; color: var(--kfp-muted); font-size: 12px;
+}
+.kfp-app .kfp-tabs button.active { color: var(--kfp-text); border-bottom-color: var(--kfp-accent); }
+.kfp-app .kfp-pill {
+  display: inline-flex; align-items: center; gap: 4px; padding: 1px 8px; border-radius: 999px;
+  background: var(--kfp-bg-3); font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--kfp-muted);
+}
+.kfp-app .kfp-pill-ready, .kfp-app .kfp-pill-loaded { background: color-mix(in srgb, var(--kfp-go) 20%, transparent); color: var(--kfp-go); }
+.kfp-app .kfp-pill-disabled { background: color-mix(in srgb, var(--kfp-accent-2) 18%, transparent); color: var(--kfp-accent-2); }
+
+/* ---------- Launcher ---------- */
+
+.kfp-launcher .window-content { padding: 0; }
+.kfp-launcher .kfp-launcher-root { display: flex; flex-direction: column; }
+.kfp-launcher .kfp-hero {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 18px 14px;
+  background:
+    radial-gradient(circle at 12% 30%, color-mix(in srgb, var(--kfp-accent) 35%, transparent), transparent 55%),
+    radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--kfp-magic) 30%, transparent), transparent 60%),
+    radial-gradient(circle at 60% 120%, color-mix(in srgb, var(--kfp-go) 22%, transparent), transparent 60%);
+  border-bottom: 1px solid var(--kfp-line);
+}
+.kfp-launcher .kfp-hero h2 { margin: 0 0 2px; border: 0; font-size: 20px; }
+.kfp-launcher .kfp-hero p { margin: 0; }
+.kfp-launcher .kfp-emblem {
+  display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px;
+  background: linear-gradient(135deg, var(--kfp-accent-2), var(--kfp-accent) 45%, var(--kfp-magic));
+  color: #1b0f06; font-size: 26px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+.kfp-launcher .kfp-version { color: var(--kfp-muted); font-size: 11px; align-self: start; }
+.kfp-launcher .kfp-members { display: flex; flex-direction: column; gap: 10px; padding: 14px; }
+.kfp-launcher .kfp-member {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--kfp-line);
+  border-left: 3px solid var(--kfp-member, var(--kfp-accent));
+  border-radius: var(--kfp-radius);
+  background: var(--kfp-bg-2);
+}
+.kfp-launcher .kfp-member.kfp-missing, .kfp-launcher .kfp-member.kfp-disabled { opacity: 0.75; }
+.kfp-launcher .kfp-member-icon {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px;
+  background: color-mix(in srgb, var(--kfp-member, var(--kfp-accent)) 22%, transparent);
+  color: var(--kfp-member, var(--kfp-accent)); font-size: 20px;
+}
+.kfp-launcher .kfp-member-body header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.kfp-launcher .kfp-member-body header strong { font-size: 14px; }
+.kfp-launcher .kfp-member-body header .kfp-pill { margin-left: auto; }
+.kfp-launcher .kfp-member-body p { margin: 4px 0 8px; color: var(--kfp-muted); }
+.kfp-launcher .kfp-member-body footer { display: flex; flex-wrap: wrap; gap: 6px; }

@@ -1,0 +1,49 @@
+<section class="kfp-launcher-root">
+  <header class="kfp-hero">
+    <div class="kfp-emblem" aria-hidden="true"><i class="fa-solid fa-feather-pointed" inert></i></div>
+    <div>
+      <h2>Kostis's Flying Paths</h2>
+      <p class="kfp-muted">Motion, magic and minds for your maps. Every part is its own module: enable only what you need.</p>
+    </div>
+    <span class="kfp-version">v{{version}}</span>
+  </header>
+
+  <div class="kfp-members">
+    {{#each members}}
+    <article class="kfp-member kfp-{{status}}" data-member="{{id}}" style="--kfp-member: {{color}}">
+      <div class="kfp-member-icon"><i class="{{icon}}" inert></i></div>
+      <div class="kfp-member-body">
+        <header>
+          <strong>{{title}}</strong>
+          {{#if version}}<span class="kfp-muted">v{{version}}</span>{{/if}}
+          <span class="kfp-pill kfp-pill-{{status}}">
+            {{#if (eq status "ready")}}Active{{/if}}{{#if (eq status "loaded")}}Active{{/if}}{{#if (eq status "disabled")}}Installed, not enabled{{/if}}{{#if (eq status "missing")}}Not installed{{/if}}
+          </span>
+        </header>
+        <p>{{blurb}}</p>
+        <footer>
+          {{#if canOpen}}
+          <button type="button" class="kfp-btn kfp-primary" data-action="openMember"><i class="fa-solid fa-arrow-up-right-from-square" inert></i> Open</button>
+          {{/if}}
+          {{#each actions}}
+          <button type="button" class="kfp-btn" data-action="runAction" data-index="{{index}}"><i class="{{icon}}" inert></i> {{label}}</button>
+          {{/each}}
+          {{#if (eq status "disabled")}}
+          {{#if @root.isGM}}<button type="button" class="kfp-btn" data-action="manageModules"><i class="fa-solid fa-plug" inert></i> Manage modules</button>{{/if}}
+          {{/if}}
+        </footer>
+      </div>
+    </article>
+    {{/each}}
+    {{#each extra}}
+    <article class="kfp-member kfp-ready" data-member="{{id}}" style="--kfp-member: {{color}}">
+      <div class="kfp-member-icon"><i class="{{icon}}" inert></i></div>
+      <div class="kfp-member-body">
+        <header><strong>{{title}}</strong></header>
+        <p>{{blurb}}</p>
+        <footer><button type="button" class="kfp-btn kfp-primary" data-action="openMember"><i class="fa-solid fa-arrow-up-right-from-square" inert></i> Open</button></footer>
+      </div>
+    </article>
+    {{/each}}
+  </div>
+</section>

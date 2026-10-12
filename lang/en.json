@@ -1,0 +1,27 @@
+{
+  "KFP": {
+    "Tools": {
+      "Select": "Select",
+      "Launcher": "Kostis's Flying Paths: all modules"
+    },
+    "Settings": {
+      "AssetFolder": {
+        "Name": "Folder for generated assets",
+        "Hint": "Where generated images (procedural orbs, particles, previews) are saved, relative to the Data folder. Leave empty to use worlds/<this world>/kostis-flying-paths."
+      }
+    },
+    "Keybindings": {
+      "OpenLauncher": "Open Kostis's Flying Paths"
+    },
+    "Info": {
+      "Undone": "Undone: {label}"
+    },
+    "Warn": {
+      "UndoFailed": "Couldn't undo \"{label}\" (what it changed may have been edited or deleted since)."
+    },
+    "Error": {
+      "NoGM": "A GM must be connected to do that.",
+      "UploadFailed": "Couldn't save {path} on the server. Check the upload permission, the free disk space and the asset folder in the module settings."
+    }
+  }
+}
