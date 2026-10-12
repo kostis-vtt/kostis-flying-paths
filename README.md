@@ -50,7 +50,7 @@ await scene.createEmbeddedDocuments("Token", data, {[KFP.NO_HISTORY]: true});
 
 ## Support
 
-Found a bug or have an idea? Open an issue on [GitHub](https://github.com/kostis-vtt/kostis-flying-paths/issues).
+Found a bug? [Report it](https://github.com/kostis-vtt/kostis-flying-paths/issues/new/choose). For questions, ideas, or to show what you made with it, head to [Discussions](https://github.com/kostis-vtt/kostis-flying-paths/discussions).
 
 These modules are free. If you enjoy them, you can support their development on [Ko-fi](https://ko-fi.com/xgpro).
 
